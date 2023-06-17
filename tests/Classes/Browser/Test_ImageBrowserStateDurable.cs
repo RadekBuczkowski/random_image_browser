@@ -136,8 +136,6 @@ public class Test_ImageBrowserStateDurable
         sut.Navigate(0);
         sut.SetImageFolders(new string[] { "/folder1" });
         string not_expected_result = sut.GetCommandLine();
-
-        // act
         sut.SetImageFolders(new string[] { "/folder1", "/folder2", string.Empty });
         sut.Navigate(10);
         sut.SetLayout(9);
@@ -153,6 +151,8 @@ public class Test_ImageBrowserStateDurable
             Window window = new() { Content = canvas };
             sut.AppendBrowserState(canvas, !sut.EnableAnimations, "/temp/abc.txt");
         });
+
+        // act
         sut = sut.Clone();  // test cloning as well
         string expected_result = sut.GetCommandLine();
         ImageBrowserStateDurable sut2 = new(expected_result.Split(" "));  // apply all changes again!
@@ -161,5 +161,38 @@ public class Test_ImageBrowserStateDurable
         // assert
         Assert.Equal(expected_result, actual_result);
         Assert.NotEqual(not_expected_result, actual_result);
+    }
+
+    [Fact]
+    public async Task Test_GetCommandLine_ClickOnce()
+    {
+        // arrange
+        ImageBrowserStateDurable sut = new();
+        sut.Initialize(80);
+        sut.SetLayout(7);
+        sut.Navigate(0);
+        sut.SetImageFolders(new string[] { "/folder1", "/folder2", string.Empty });
+        sut.Navigate(10);
+        sut.SetLayout(9);
+        sut.ToggleGroupingImages();
+        sut.ToggleAutoScaling();
+        sut.Rotate(90, false, true);
+        sut.GoIn(3);
+        sut.ToggleAutoScaling();
+        sut.ApplyExtraZoom(true);
+        await MainThread.InvokeSTA(() =>
+        {
+            ImageBrowserCanvas canvas = new();
+            Window window = new() { Content = canvas };
+            sut.AppendBrowserState(canvas, !sut.EnableAnimations, "/temp/abc.txt");
+        });
+
+        // act
+        string expected_result = sut.GetCommandLine();
+        ImageBrowserStateDurable sut2 = new(new string[] { expected_result });  // all changes as one string
+        string actual_result = sut2.GetCommandLine();
+
+        // assert
+        Assert.Equal(expected_result, actual_result);
     }
 }

@@ -135,15 +135,13 @@ public class ImageBrowserStateDurable : ImageBrowserState
 
         List<string> folders = new();
         string key, value = null;
-        IEnumerator<string> enumerator = parameters.ToList().GetEnumerator();
+        IEnumerator<string> enumerator = SplitCommandLineKeys(parameters).GetEnumerator();
         while (enumerator.MoveNext())
         {
             key = value;
-            value = enumerator.Current?.Trim();
+            value = enumerator.Current?.Trim(' ', '"');
             if (IsSwitch(key) == true && IsSwitch(value) == false && string.IsNullOrEmpty(value) == false)
             {
-                // internal use only - quotes are removed automatically when the command line is handled by the OS
-                value = value.Trim('"');
                 _ = int.TryParse(value, out int integer);
                 _ = bool.TryParse(value, out bool enabled);
                 _ = double.TryParse(value, out double doubleNumber);
@@ -210,5 +208,31 @@ public class ImageBrowserStateDurable : ImageBrowserState
         result.Append($" -MaxImagePixelDimension {MaxImagePixelDimension}");
         result.Append($" -DesiredFrameRate {DesiredFrameRate}");
         return result.ToString();
+    }
+
+    /// <summary>
+    /// Specifies all command line parameters.
+    /// </summary>
+    private string[] CommandLineKeys { get; } = new string[]
+        { "-ImageFolder1", "-ImageFolder2", "-ImageFolder3", "-Layout", "-PreviousLayout", "-AutoScaling",
+            "-AutoScalingWhenZoomed", "-ExtraZoom", "-IsBlackBackground", "-IsFullScreen", "-EnableAnimations",
+            "-GroupImages", "-RotationAngle", "-Mirror", "-Portrait", "-SerializedWindowRectangle",
+            "-SerializedCacheFile", "-FirstImageIndex", "-FirstUnseenImageIndex", "-AutoRestartEveryNImages",
+            "-MaxImagePixelDimension", "-DesiredFrameRate" };
+
+    /// <summary>
+    /// Split command line to the proper format. Only needed with calling offline ClickOnce applications.
+    /// </summary>
+    private IEnumerable<string> SplitCommandLineKeys(IEnumerable<string> parameters)
+    {
+        IEnumerable<string> Split(string parameter)
+        {
+            if (CommandLineKeys.Count(parameter.Contains) <= 1)
+                return parameter.Yield();
+            foreach (string key in CommandLineKeys)
+                parameter = parameter.Replace($" {key} ", $"\f {key} \f");
+            return parameter.Split('\f');
+        }
+        return parameters.SelectMany(Split);
     }
 }
