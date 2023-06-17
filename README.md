@@ -10,7 +10,10 @@ By default the following image types are enabled in the options:
 **jpg, jpeg, gif, png, webp, avif**.
 But after starting the application you can easily enable other less common image extensions in the program Options.
 
-The browser is currently available in 3 languages (**English, Danish and German**).
+The browser is currently available in 3 languages (**English, Danish and German**). The default language is specified
+in the operating system, but it is possible change it in the configuration.
+
+Here is the help from the English version of the application that you can show by pressing the F1 key [at this link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/src/Resources/help.en_US.html).
 
 ### Compiled version
 
