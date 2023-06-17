@@ -1,2 +1,15 @@
-# random_image_browser
-Browser for images with smooth animations like on iPhone that can also show images in random order.
+# Random Image Browser &nbsp; ![Icon](src/Resources/butterfly.ico?raw=true)
+
+This is a browser for images with smooth animations and fluid repeated scrolling like on an iPhone. It shows several images one one page and you can zoom in each image with a mouse click.
+
+All image transitions like zooming, navigation, rotations, changing image arrangements, etc. **are animated**. The browser can group images and shulffle the groups (default) or can show all images in random order.
+
+By default the following image types are enabled in the options:
+**jpg, jpeg, gif, png, webp, avif**.
+But after starting the application you can easily enable other less common image extensions in the program Options.
+
+The browser is currently available in 3 languages (**English, Danish and German**).
+
+The compiled version of the application is available as a ClickOnce installation [at this link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/ClickOnce/Publish.html).
+
+Please note that the installation does not have certificates attached so you have to ignore all warnings about an untrusted provider.
