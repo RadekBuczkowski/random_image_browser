@@ -7,3 +7,4 @@ tests/obj/
 post_build.bat
 *.suo
 *.user
+*.pubxml
