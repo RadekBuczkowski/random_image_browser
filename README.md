@@ -20,7 +20,7 @@ Please note that the installation does not have certificates attached so you hav
 
 ### Screen-shots
 
-The program is rich in options and configurations and is very easy to use. Below are some a few screen-shots.
+The program is rich in options and configurations and is very easy to use. Below are a few screen-shots.
 
 ![Icon](demo/demo1.jpg?raw=true)
 
