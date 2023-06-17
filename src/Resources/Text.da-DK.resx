@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdvancedTab" xml:space="preserve">
+    <value>Avanceret</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="AdvancedTabToolTip" xml:space="preserve">
+    <value>Vælg avancerede indstillinger.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="AllLandscapeSuffix" xml:space="preserve">
+    <value>(alle landskab)</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="AllPortraitSuffix" xml:space="preserve">
+    <value>(alle portræt)</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="AnimatedNoToolTip" xml:space="preserve">
+    <value>Animeret: ja</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="AnimatedYesToolTip" xml:space="preserve">
+    <value>Animeret: nej</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="AnimationsOff" xml:space="preserve">
+    <value>Animationer slukket</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="AnimationsOn" xml:space="preserve">
+    <value>Animationer på</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="ApplicationNotInstalled" xml:space="preserve">
+    <value>{0} ikke installeret.</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="AutoScalingLabel" xml:space="preserve">
+    <value>Automatisk skalering:</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="AutoScalingTab" xml:space="preserve">
+    <value>Automatisk skalering</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="AutoScalingToolTip" xml:space="preserve">
+    <value>Vælg den automatiske skaleringsmodus.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="AutoScalingWhenZoomedLabel" xml:space="preserve">
+    <value>Automatisk skalering når zoomet ind:</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="BackButton" xml:space="preserve">
+    <value>Tilbage</value>
+    <comment>Used in the options window</comment>
+  </data>
+  <data name="BlackBackgroundCheckBox" xml:space="preserve">
+    <value>Sort baggrund</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="BlackBackgroundToolTip" xml:space="preserve">
+    <value>Skift mellem sort og hvid baggrund.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="CurrentSizeToolTip" xml:space="preserve">
+    <value>Aktuel størrelse</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="DesiredFrameRateLabel" xml:space="preserve">
+    <value>Ønsket frame rate:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="DesiredFrameRateToolTip" xml:space="preserve">
+    <value>Den ønskede frame rate for alle animationer</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="DisabledOption" xml:space="preserve">
+    <value>Deaktiveret</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="EnableAnimationsCheckBox" xml:space="preserve">
+    <value>Aktiver animationer</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="EnableAnimationsToolTip" xml:space="preserve">
+    <value>Slå overgangsanimationer til og fra.
+Bliver aktiv når dialogboksen lukkes.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="FailedToDisplayImage" xml:space="preserve">
+    <value>Kunne ikke vise billedet på skærmen!</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="FailedToLoadImage" xml:space="preserve">
+    <value>Kunne ikke indlæse billedet fra filen!</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="FileDateToolTip" xml:space="preserve">
+    <value>Fildato</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="FileSizeToolTip" xml:space="preserve">
+    <value>Filstørrelse</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="FileTypesLabel" xml:space="preserve">
+    <value>Filtyper:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FileTypesToolTip" xml:space="preserve">
+    <value>Vælg filtypenavne for billeder, der skal indlæses.
+Listen skal være kommasepareret.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FitInsideEdges" xml:space="preserve">
+    <value>Pas til indvendige kanter</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="FitInsideEdgesRadio" xml:space="preserve">
+    <value>Pas til indvendige kanter</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitInsideEdgesRadioToolTip" xml:space="preserve">
+    <value>Få de to nærmere billedkanter til at røre skærmboks kanter.
+Den synlige del af billedindholdet kan justeres med musen.
+
+Når den er aktiveret, kan du trykke på "Frem" eller "Tilbage"
+museknappen for at animere justering af alle billeder.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitInsideEdgesWhenZoomedRadioToolTip" xml:space="preserve">
+    <value>Få de to nærmere billedkanter til at røre skærmens kanter.
+Den synlige del af billedindholdet kan justeres med musen.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitOutsideEdges" xml:space="preserve">
+    <value>Pas til udvendige kanter</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="FitOutsideEdgesRadio" xml:space="preserve">
+    <value>Pas til udvendige kanter</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitOutsideEdgesRadioToolTip" xml:space="preserve">
+    <value>Få de to fjernere billedkanter til at røre skærmboks kanter.
+Hele billedindholdet er altid synligt.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitOutsideEdgesWhenZoomedRadioToolTip" xml:space="preserve">
+    <value>Få de to fjernere billedkanter til at røre skærmens kanter.
+Hele billedindholdet er altid synligt.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="Folder1Label" xml:space="preserve">
+    <value>Mappe 1:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="Folder2Label" xml:space="preserve">
+    <value>Mappe 2:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="Folder3Label" xml:space="preserve">
+    <value>Mappe 3:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FolderComboTooltip" xml:space="preserve">
+    <value>Vælg billedmappe.
+Brug rullelisten eller mappeknappen, eller skriv.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FoldersTab" xml:space="preserve">
+    <value>Mapper</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FoldersTabToolTip" xml:space="preserve">
+    <value>Vælg billedmapper og filtypenavne.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FullScreenCheckBox" xml:space="preserve">
+    <value>Fuld skærm</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="FullScreenToolTip" xml:space="preserve">
+    <value>Skift mellem fuld skærm og normal skærmtilstand.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="GoBackButtonTooltip" xml:space="preserve">
+    <value>Luk vinduet</value>
+    <comment>Used in the child windows</comment>
+  </data>
+  <data name="GoBackToImagesToolTip" xml:space="preserve">
+    <value>Gå tilbage til billeder {0} til {1}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GoBackToImageToolTip" xml:space="preserve">
+    <value>Gå tilbage til billede {0}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GoToImagesToolTip" xml:space="preserve">
+    <value>Gå til billeder {0} til {1}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GoToImageToolTip" xml:space="preserve">
+    <value>Gå til billede {0}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GroupImagesCheckBox" xml:space="preserve">
+    <value>Gruppér billeder</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="GroupImagesToolTip" xml:space="preserve">
+    <value>Skift mellem gruppering af billeder, hvor kun grupperne bliver randomiseret, eller
+randomiser alle billeder (hvis afkrydset).
+
+Indstillingen ændrer også betydningen af musehjulet. Skifter henholdsvis mellem rulning
+af alle billeder og rulning af alfabetiske naboer af ét billede (hvis afkrydset).
+For at rulle gennem alle billeder, brug musens hjul i hjørnerne af vinduet.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="HelpButtonToolTip" xml:space="preserve">
+    <value>Åbn hjælpevinduet</value>
+    <comment>Main window</comment>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Hjælp</value>
+    <comment>Window title</comment>
+  </data>
+  <data name="ImageFileCount" xml:space="preserve">
+    <value>{0} billedfiler</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="ImagesLabel" xml:space="preserve">
+    <value>Billeder:</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="IndexToolTip" xml:space="preserve">
+    <value>Indeks</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="KeyAnimations" xml:space="preserve">
+    <value>A</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyBackground" xml:space="preserve">
+    <value>B</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyGoToRandom" xml:space="preserve">
+    <value>T</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyMirror" xml:space="preserve">
+    <value>S</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyNormalImages" xml:space="preserve">
+    <value>N</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyPauseResume" xml:space="preserve">
+    <value>P</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyRotateLeft" xml:space="preserve">
+    <value>V</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyRotateRight" xml:space="preserve">
+    <value>H</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyUpsideDown" xml:space="preserve">
+    <value>U</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="LayoutDimensions" xml:space="preserve">
+    <value>Layout {0} × {1}</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="LayoutTab" xml:space="preserve">
+    <value>Layout</value>
+    <comment>Used in the options window in the Layout tab</comment>
+  </data>
+  <data name="LayoutToolTip" xml:space="preserve">
+    <value>Vælg arrangementet og antallet af synlige billeder.</value>
+    <comment>Used in the options window in the Layout tab</comment>
+  </data>
+  <data name="LoadedSizeToolTip" xml:space="preserve">
+    <value>Indlæst størrelse</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="LoadingImageFiles" xml:space="preserve">
+    <value>Indlæsning af billedfiler...</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="LoadingInProgress" xml:space="preserve">
+    <value>Indlæsning er i gang...</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="MaxPixelResolutionLabel" xml:space="preserve">
+    <value>Billeddimensionsgrænse:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="MaxPixelResolutionToolTip" xml:space="preserve">
+    <value>Ved indlæsning af billeder alle bitmaps med enten bredde eller højde,
+der overstiger denne værdi, vil blive nedskaleret for at forbedre ydeevnen.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="MirrorToolTip" xml:space="preserve">
+    <value>Spejl</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="MiscellaneousTab" xml:space="preserve">
+    <value>Diverse</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="MiscellaneousToolTip" xml:space="preserve">
+    <value>Vælg diverse indstillinger.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="NeighborToolTip" xml:space="preserve">
+    <value>Nabo</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="NoImagesFound" xml:space="preserve">
+    <value>Ingen billedfiler fundet</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="NormalImage" xml:space="preserve">
+    <value>Normalt billede</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="NormalImages" xml:space="preserve">
+    <value>Normale billeder</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="OpenFolderSelectionToolTip" xml:space="preserve">
+    <value>Åbn mappevalgsdialogen.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="OptionsButtonToolTip" xml:space="preserve">
+    <value>Åbn indstillingsvinduet</value>
+    <comment>Main window</comment>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Indstillinger</value>
+    <comment>Window title</comment>
+  </data>
+  <data name="OriginalSize" xml:space="preserve">
+    <value>Original størrelse</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="OriginalSizeRadio" xml:space="preserve">
+    <value>Original størrelse</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="OriginalSizeRadioToolTip" xml:space="preserve">
+    <value>Deaktiver skalering og brug de originale billeddimensioner.
+Den synlige del af billedindholdet kan justeres med musen,
+hvis billedet er større end skærmen.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="OriginalSizeToolTip" xml:space="preserve">
+    <value>Original størrelse</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="PerformanceTipLabel" xml:space="preserve">
+    <value>For at optimere ydeevnen anbefales det at lukke alle andre applikationer, der bruger grafikkortet i udstrakt grad, som f.eks. webbrowsere.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="RandomGroupOrder" xml:space="preserve">
+    <value>Gruppér billeder</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RandomOrder" xml:space="preserve">
+    <value>Tilfældig rækkefølge</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RestartEveryNImagesLabel" xml:space="preserve">
+    <value>Genstart hvert N billeder:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="RestartEveryNImagesTooltip" xml:space="preserve">
+    <value>Genstart efter visning af det valgte antal billeder for at afhjælpe problemet med hakkende
+animationer. For at genstarte med det samme, tryk på F4, efter at have lukket dialogboksen.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="RotateLeft" xml:space="preserve">
+    <value>Roter til venstre</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RotateLeftToolTip" xml:space="preserve">
+    <value>Roter til venstre</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="RotateRight" xml:space="preserve">
+    <value>Roter til højre</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RotateRightToolTip" xml:space="preserve">
+    <value>Roter til højre</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="SaveAsDefaultButton" xml:space="preserve">
+    <value>Gem som standard</value>
+    <comment>Used in the options window</comment>
+  </data>
+  <data name="SaveAsDefaultButtonTooltip" xml:space="preserve">
+    <value>Gem ændringer som standardindstillinger i konfigurationsfilen</value>
+    <comment>Used in the options window</comment>
+  </data>
+  <data name="SelectAFolderOrUseOptions" xml:space="preserve">
+    <value>Vælg en mappe med billeder efter
+trykke på F2, eller vælg flere mapper
+i "{0}" vinduet ved at trykke på F10.</value>
+    <comment>Main window</comment>
+  </data>
+  <data name="TheFileDoesNotExist" xml:space="preserve">
+    <value>Filen findes ikke:</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="Thumbnails" xml:space="preserve">
+    <value>Thumbnails</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="ThumbnailsRadio" xml:space="preserve">
+    <value>Thumbnails</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="ThumbnailsRadioToolTip" xml:space="preserve">
+    <value>Få de to nærmere billedkanter til at røre skærmboks kanter.
+Billeder har afrundede hjørner, er altid centreret og kan ikke justeres med musen.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="TipLabel" xml:space="preserve">
+    <value>Tip:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="UpsideDownImage" xml:space="preserve">
+    <value>På hovedet</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="UpsideDownToolTip" xml:space="preserve">
+    <value>På hovedet</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="ZoomToolTip" xml:space="preserve">
+    <value>Zoom</value>
+    <comment>Image ToolTip</comment>
+  </data>
+</root>

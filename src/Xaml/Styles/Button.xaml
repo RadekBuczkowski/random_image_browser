@@ -1,0 +1,130 @@
+﻿<!-- This file contains styles for normal dialog buttons -->
+    
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Styles shared between Button, TabControl and TabItem -->
+
+    <GradientStopCollection x:Key="gradientNormal">
+        <GradientStop Color="#FFF3F3F3" Offset="0.0" />
+        <GradientStop Color="#FFEBEBEB" Offset="0.49" />
+        <GradientStop Color="#FFE4E4E4" Offset="0.5" />
+        <GradientStop Color="#FFDCDCDC" Offset="0.51" />
+        <GradientStop Color="#FFCDCDCD" Offset="0.98" />
+        <GradientStop Color="White" Offset="1.0" />
+    </GradientStopCollection>
+
+    <GradientStopCollection x:Key="gradientHighlighted">
+        <GradientStop Color="#FFEAF6FD" Offset="0.0" />
+        <GradientStop Color="#FFDAF0FC" Offset="0.49" />
+        <GradientStop Color="#FFCBEBFC" Offset="0.5" />
+        <GradientStop Color="#FFBDE6FD" Offset="0.51" />
+        <GradientStop Color="#FFA7D9F5" Offset="1.0" />
+    </GradientStopCollection>
+
+    <GradientStopCollection x:Key="gradientPressed">
+        <GradientStop Color="#FFC2DFF5" Offset="0.0" />
+        <GradientStop Color="#FFD0E6FD" Offset="0.49" />
+        <GradientStop Color="#FFD8EBFC" Offset="0.5" />
+        <GradientStop Color="#FFDAF0FC" Offset="0.51" />
+        <GradientStop Color="#FFEAF6FD" Offset="1.0" />
+    </GradientStopCollection>
+
+    <SolidColorBrush x:Key="colorButtonBackground" Color="#FFF5F5F5" />
+    <SolidColorBrush x:Key="colorBorderDark" Color="#FF8C8E94" />
+    <SolidColorBrush x:Key="colorButtonDisabled" Color="#FFEEEEEE" />
+    <SolidColorBrush x:Key="colorButtonBorderDisabled" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="colorFont" Color="Black" />
+    <SolidColorBrush x:Key="colorDottedSelection" Color="Black" />
+
+    <LinearGradientBrush x:Key="colorButton" StartPoint="0,0" EndPoint="0,1"
+                         GradientStops="{StaticResource gradientNormal}" />
+
+    <LinearGradientBrush x:Key="colorButtonHighlighted" StartPoint="0,0" EndPoint="0,1"
+                         GradientStops="{StaticResource gradientHighlighted}" />
+
+    <LinearGradientBrush x:Key="colorButtonPressed" StartPoint="0,0" EndPoint="0,1"
+                         GradientStops="{StaticResource gradientPressed}" />
+
+    <Style x:Key="styleDottedSelectionFrame" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="{StaticResource colorDottedSelection}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeDashArray" Value="1 2" />
+    </Style>
+
+    <Style x:Key="styleDottedSelection2">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" Style="{StaticResource styleDottedSelectionFrame}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="styleButton" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{StaticResource colorFont}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource styleDottedSelection2}" />
+        <Setter Property="Background" Value="{StaticResource colorButtonBackground}" />
+        <Setter Property="ToolTipService.InitialShowDelay" Value="1000"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="border" BorderThickness="1" BorderBrush="{StaticResource colorBorderDark}"
+                            Background="{StaticResource colorButton}">
+                        <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center"
+                                          Content="{TemplateBinding Content}" HorizontalAlignment="Center">
+                            <ContentPresenter.RenderTransform>
+                                <TransformGroup>
+                                    <TranslateTransform X="0" Y="0" />
+                                </TransformGroup>
+                            </ContentPresenter.RenderTransform>
+                        </ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard Name="CycleUpDown">
+                                <Storyboard>
+                                    <DoubleAnimation From="-1" To="1" BeginTime="0:0:1" Duration="0:0:0.3" AutoReverse="True"
+                                                     RepeatBehavior="Forever"
+                                                     Storyboard.TargetName="ContentSite"
+                                                     Storyboard.TargetProperty=
+                                        "(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <StopStoryboard BeginStoryboardName="CycleUpDown" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="PreviewMouseLeftButtonDown">
+                            <StopStoryboard BeginStoryboardName="CycleUpDown" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="PreviewMouseLeftButtonUp">
+                            <SeekStoryboard Offset="0:0:0" BeginStoryboardName="CycleUpDown" />
+                            <ResumeStoryboard BeginStoryboardName="CycleUpDown" />
+                        </EventTrigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background"
+                                    Value="{StaticResource colorButtonHighlighted}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Margin" Value="1,1,-1,-1" />
+                            <Setter TargetName="border" Property="Background"
+                                    Value="{StaticResource colorButtonPressed}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="#FFAFAFAF" />
+                            <Setter TargetName="border" Property="Background"
+                                    Value="{StaticResource colorButtonDisabled}" />
+                            <Setter TargetName="border" Property="BorderBrush"
+                                    Value="{StaticResource colorButtonBorderDisabled}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

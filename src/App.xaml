@@ -1,0 +1,22 @@
+﻿<Application x:Class="Random_Image.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="Xaml/MainWindow.xaml"
+    Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Xaml/Styles/Converters.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/Shadows.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/Control.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/Image.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/SlidingPanel.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/RadioButton.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/CheckBox.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/Button.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/TabControl.xaml" />
+                <ResourceDictionary Source="Xaml/Styles/BlueButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,146 @@
+﻿<!-- This file contains styles for the animated sliding panel (see Classes/Wpf/SlidingPanel.cs) -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:w="clr-namespace:Random_Image.Classes.Wpf">
+
+    <!-- Sliding navigation buttons panel -->
+
+    <Style x:Key="styleSlidingNavigationPanel" TargetType="{x:Type w:SlidingPanel}">
+        <Setter Property="IsVertical" Value="False" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TranslateTransform X="200" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Trigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="CycleShiftNavigationOut" />
+                    <BeginStoryboard x:Name="CycleShiftNavigationIn">
+                        <Storyboard>
+                            <DoubleAnimation To="0" Duration="0:0:0.4" DecelerationRatio="1" 
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+            <Trigger Property="IsExpanded" Value="False">
+                <Trigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="CycleShiftNavigationIn" />
+                    <BeginStoryboard x:Name="CycleShiftNavigationOut">
+                        <Storyboard>
+                            <DoubleAnimation To="200" BeginTime="0:0:0.6" Duration="0:0:1"
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Sliding menu buttons panel -->
+
+    <Style x:Key="styleSlidingMenuPanel" TargetType="{x:Type w:SlidingPanel}">
+        <Setter Property="IsVertical" Value="True" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TranslateTransform Y="-200" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Trigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="CycleShiftMenuOut" />
+                    <BeginStoryboard x:Name="CycleShiftMenuIn">
+                        <Storyboard>
+                            <DoubleAnimation To="0" Duration="0:0:0.4" DecelerationRatio="1" 
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+            <Trigger Property="IsExpanded" Value="False">
+                <Trigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="CycleShiftMenuIn" />
+                    <BeginStoryboard x:Name="CycleShiftMenuOut">
+                        <Storyboard>
+                            <DoubleAnimation To="-200" BeginTime="0:0:0.6" Duration="0:0:1"
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Sliding message panel -->
+
+    <Style x:Key="styleSlidingMessagePanel" TargetType="{x:Type w:SlidingPanel}">
+        <Setter Property="IsVertical" Value="True" />
+        <Setter Property="Effect" Value="{StaticResource shadowMedium}" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0.002,1">
+                    <GradientStop Color="#FFE0E0E0" Offset="0" />
+                    <GradientStop Color="#FFA0A0A0" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0.002,1">
+                    <GradientStop Color="#FFB0B0B0" Offset="0" />
+                    <GradientStop Color="#FFE0E0E0" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="{Binding Path=ActualHeight,
+                    Converter={StaticResource thicknessMultiply}, ConverterParameter=0.005;0.005;0.005;0,
+                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+        <Setter Property="CornerRadius" Value="{Binding Path=ActualHeight,
+                    Converter={StaticResource cornerRadiusMultiply}, ConverterParameter=0.050;0.050;0;0,
+                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+        <Setter Property="Padding" Value="{Binding Path=ActualHeight,
+                    Converter={StaticResource thicknessMultiply}, ConverterParameter=0.040;0.015;0.040;0.015,
+                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+        <Setter Property="Margin" Value="{Binding Path=ActualHeight,
+                    Converter={StaticResource thicknessMultiply}, ConverterParameter=0.010;0.010;0.010;0,
+                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <TranslateTransform X="0" Y="0" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsExpanded" Value="True">
+                <Trigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="CycleShiftMessageOut" />
+                    <BeginStoryboard x:Name="CycleShiftMessageIn">
+                        <Storyboard>
+                            <DoubleAnimation From="200" To="0" DecelerationRatio="1" Duration="0:0:0.3"
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+            <Trigger Property="IsExpanded" Value="False">
+                <Trigger.EnterActions>
+                    <StopStoryboard BeginStoryboardName="CycleShiftMessageIn" />
+                    <BeginStoryboard x:Name="CycleShiftMessageOut">
+                        <Storyboard>
+                            <DoubleAnimation From="0" To="200" BeginTime="0:0:1" Duration="0:0:0.8"
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" />
+
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

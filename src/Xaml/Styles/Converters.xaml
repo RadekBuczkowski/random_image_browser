@@ -1,0 +1,16 @@
+﻿<!-- This file contains binding converters that can be used when binding properties to the user interface -->
+<!-- Each converter is implemented as a separate class in C# (see Classes/Wpf/Converters.cs) -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:w="clr-namespace:Random_Image.Classes.Wpf">
+
+    <w:Multiply x:Key="multiply" />
+    <w:ThicknessMultiply x:Key="thicknessMultiply" />
+    <w:CornerRadiusMultiply x:Key="cornerRadiusMultiply" />
+    <w:SwapColors x:Key="swapColors" />
+    <w:RadioButtonCheckedConverter x:Key="radioButtonChecked" />
+    <w:LayoutNameConverter x:Key="layoutName" />
+    <w:IntegerSettingConverter x:Key="integerSettingConverter" />
+
+</ResourceDictionary>

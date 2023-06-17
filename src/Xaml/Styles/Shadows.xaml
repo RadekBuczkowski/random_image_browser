@@ -1,0 +1,20 @@
+﻿<!-- This file contains styles for the drop shadow effect -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DropShadowEffect x:Key="shadowTiny" Color="Black" Direction="320" Opacity="0.66" BlurRadius="0" ShadowDepth="0" />
+
+    <DropShadowEffect x:Key="shadowSmall" Color="Black" Direction="320" Opacity="0.5" 
+                      BlurRadius="{Binding Path=ActualHeight, Converter={StaticResource multiply}, ConverterParameter=0.003,
+                          RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                      ShadowDepth="{Binding Path=ActualHeight, Converter={StaticResource multiply}, ConverterParameter=0.006,
+                          RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+
+    <DropShadowEffect x:Key="shadowMedium" Color="Black" Direction="320" Opacity="0.5" 
+                      BlurRadius="{Binding Path=ActualHeight, Converter={StaticResource multiply}, ConverterParameter=0.012,
+                          RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                      ShadowDepth="{Binding Path=ActualHeight, Converter={StaticResource multiply}, ConverterParameter=0.015,
+                          RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+
+</ResourceDictionary>

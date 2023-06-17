@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdvancedTab" xml:space="preserve">
+    <value>Advanced</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="AdvancedTabToolTip" xml:space="preserve">
+    <value>Select advanced options.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="AllLandscapeSuffix" xml:space="preserve">
+    <value>(all landscape)</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="AllPortraitSuffix" xml:space="preserve">
+    <value>(all portrait)</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="AnimatedNoToolTip" xml:space="preserve">
+    <value>Animated: yes</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="AnimatedYesToolTip" xml:space="preserve">
+    <value>Animated: no</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="AnimationsOff" xml:space="preserve">
+    <value>Animations off</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="AnimationsOn" xml:space="preserve">
+    <value>Animations on</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="ApplicationNotInstalled" xml:space="preserve">
+    <value>{0} not installed.</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="AutoScalingLabel" xml:space="preserve">
+    <value>Auto-scaling:</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="AutoScalingTab" xml:space="preserve">
+    <value>Auto-scaling</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="AutoScalingToolTip" xml:space="preserve">
+    <value>Select the auto-scaling mode.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="AutoScalingWhenZoomedLabel" xml:space="preserve">
+    <value>Auto-scaling when zoomed:</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="BackButton" xml:space="preserve">
+    <value>Back</value>
+    <comment>Used in the options window</comment>
+  </data>
+  <data name="BlackBackgroundCheckBox" xml:space="preserve">
+    <value>Black background</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="BlackBackgroundToolTip" xml:space="preserve">
+    <value>Switch between black and white backround.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="CurrentSizeToolTip" xml:space="preserve">
+    <value>Current size</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="DesiredFrameRateLabel" xml:space="preserve">
+    <value>Desired frame rate:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="DesiredFrameRateToolTip" xml:space="preserve">
+    <value>The desired frame rate of all animations</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="DisabledOption" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="EnableAnimationsCheckBox" xml:space="preserve">
+    <value>Enable animations</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="EnableAnimationsToolTip" xml:space="preserve">
+    <value>Switch transition animations on and off.
+Becomes active when the dialog is closed.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="FailedToDisplayImage" xml:space="preserve">
+    <value>Failed to display the image on screen!</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="FailedToLoadImage" xml:space="preserve">
+    <value>Failed to load the image from file!</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="FileDateToolTip" xml:space="preserve">
+    <value>File date</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="FileSizeToolTip" xml:space="preserve">
+    <value>File size</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="FileTypesLabel" xml:space="preserve">
+    <value>File types:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FileTypesToolTip" xml:space="preserve">
+    <value>Select file extensions of images to load. The list should be comma-separated.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FitInsideEdges" xml:space="preserve">
+    <value>Fit to inside edges</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="FitInsideEdgesRadio" xml:space="preserve">
+    <value>Fit to inside edges</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitInsideEdgesRadioToolTip" xml:space="preserve">
+    <value>Make the two closer image edges touch the screen box edges.
+The visible part of the image content can be aligned with the mouse.
+
+When activated, you can press the "Forward" or "Back" mouse buttons
+to animate alignment of all images.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitInsideEdgesWhenZoomedRadioToolTip" xml:space="preserve">
+    <value>Make the two closer image edges touch the screen edges.
+The visible part of the image content can be aligned with the mouse.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitOutsideEdges" xml:space="preserve">
+    <value>Fit to outside edges</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="FitOutsideEdgesRadio" xml:space="preserve">
+    <value>Fit to outside edges</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitOutsideEdgesRadioToolTip" xml:space="preserve">
+    <value>Make the two more distant image edges touch the screen box edges.
+The entire image content is always visible.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="FitOutsideEdgesWhenZoomedRadioToolTip" xml:space="preserve">
+    <value>Make the two more distant image edges touch the screen edges.
+The entire image content is always visible.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="Folder1Label" xml:space="preserve">
+    <value>Folder 1:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="Folder2Label" xml:space="preserve">
+    <value>Folder 2:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="Folder3Label" xml:space="preserve">
+    <value>Folder 3:</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FolderComboTooltip" xml:space="preserve">
+    <value>Select image folder.
+Use the drop down list, or the folder button, or type.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FoldersTab" xml:space="preserve">
+    <value>Folders</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FoldersTabToolTip" xml:space="preserve">
+    <value>Select image folders and extensions.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="FullScreenCheckBox" xml:space="preserve">
+    <value>Full screen</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="FullScreenToolTip" xml:space="preserve">
+    <value>Switch between full screen and normal screen mode.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="GoBackButtonTooltip" xml:space="preserve">
+    <value>Close the dialog</value>
+    <comment>Used in the child windows</comment>
+  </data>
+  <data name="GoBackToImagesToolTip" xml:space="preserve">
+    <value>Go back to images {0} to {1}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GoBackToImageToolTip" xml:space="preserve">
+    <value>Go back to image {0}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GoToImagesToolTip" xml:space="preserve">
+    <value>Go to images {0} to {1}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GoToImageToolTip" xml:space="preserve">
+    <value>Go to image {0}</value>
+    <comment>Used in navigation buttons</comment>
+  </data>
+  <data name="GroupImagesCheckBox" xml:space="preserve">
+    <value>Group images</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="GroupImagesToolTip" xml:space="preserve">
+    <value>Switch between grouping images with only the groups being shuffled, and shuffling
+all images (if unchecked).
+
+The option also changes the meaning of the mouse wheel. Switches respectively
+between scrolling all images, and scrolling the neighbors of one image (if unchecked).
+To scroll all images, use the mouse wheel in the corners of the window.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="HelpButtonToolTip" xml:space="preserve">
+    <value>Open the help dialog</value>
+    <comment>Main window</comment>
+  </data>
+  <data name="HelpTitle" xml:space="preserve">
+    <value>Help</value>
+    <comment>Window title</comment>
+  </data>
+  <data name="ImageFileCount" xml:space="preserve">
+    <value>{0} image files</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="ImagesLabel" xml:space="preserve">
+    <value>Images:</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="IndexToolTip" xml:space="preserve">
+    <value>Index</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="KeyAnimations" xml:space="preserve">
+    <value>A</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyBackground" xml:space="preserve">
+    <value>B</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyGoToRandom" xml:space="preserve">
+    <value>O</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyMirror" xml:space="preserve">
+    <value>M</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyNormalImages" xml:space="preserve">
+    <value>N</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyPauseResume" xml:space="preserve">
+    <value>P</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyRotateLeft" xml:space="preserve">
+    <value>L</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyRotateRight" xml:space="preserve">
+    <value>R</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="KeyUpsideDown" xml:space="preserve">
+    <value>U</value>
+    <comment>Localized keyboard shortcuts</comment>
+  </data>
+  <data name="LayoutDimensions" xml:space="preserve">
+    <value>Layout {0} × {1}</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="LayoutTab" xml:space="preserve">
+    <value>Layout</value>
+    <comment>Used in the options window in the Layout tab</comment>
+  </data>
+  <data name="LayoutToolTip" xml:space="preserve">
+    <value>Select the arrangement and number of visible images.</value>
+    <comment>Used in the options window in the Layout tab</comment>
+  </data>
+  <data name="LoadedSizeToolTip" xml:space="preserve">
+    <value>Loaded size</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="LoadingImageFiles" xml:space="preserve">
+    <value>Loading image files...</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="LoadingInProgress" xml:space="preserve">
+    <value>Loading in progress...</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="MaxPixelResolutionLabel" xml:space="preserve">
+    <value>Image dimensions limit:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="MaxPixelResolutionToolTip" xml:space="preserve">
+    <value>When loading images, any bitmaps with either width or height exceeding this value
+will be scaled down to enhance performance.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="MirrorToolTip" xml:space="preserve">
+    <value>Mirror</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="MiscellaneousTab" xml:space="preserve">
+    <value>Miscellaneous</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="MiscellaneousToolTip" xml:space="preserve">
+    <value>Select miscellaneous options.</value>
+    <comment>Used in the options window in the Miscellaneous tab</comment>
+  </data>
+  <data name="NeighborToolTip" xml:space="preserve">
+    <value>Neighbor</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="NoImagesFound" xml:space="preserve">
+    <value>No image files found</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="NormalImage" xml:space="preserve">
+    <value>Normal image</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="NormalImages" xml:space="preserve">
+    <value>Normal images</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="OpenFolderSelectionToolTip" xml:space="preserve">
+    <value>Open the folder selection dialog.</value>
+    <comment>Used in the options window in the Folders tab</comment>
+  </data>
+  <data name="OptionsButtonToolTip" xml:space="preserve">
+    <value>Open the options dialog</value>
+    <comment>Main window</comment>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Options</value>
+    <comment>Window title</comment>
+  </data>
+  <data name="OriginalSize" xml:space="preserve">
+    <value>Original size</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="OriginalSizeRadio" xml:space="preserve">
+    <value>Original size</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="OriginalSizeRadioToolTip" xml:space="preserve">
+    <value>Disable auto-scaling and use the original image dimensions.
+The visible part of the image content can be aligned with the mouse
+if the image is larger than the screen.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="OriginalSizeToolTip" xml:space="preserve">
+    <value>Original size</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="PerformanceTipLabel" xml:space="preserve">
+    <value>To optimize performance, it is recommended to close all other applications extensively utilizing
+the graphics card, such as web browsers.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="RandomGroupOrder" xml:space="preserve">
+    <value>Group images</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RandomOrder" xml:space="preserve">
+    <value>Random order</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RestartEveryNImagesLabel" xml:space="preserve">
+    <value>Restart every N images:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="RestartEveryNImagesTooltip" xml:space="preserve">
+    <value>Restart after showing the selected number of images to remedy the problem
+of stuttering animations. To restart immediately, press F4 after closing this dialog.</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="RotateLeft" xml:space="preserve">
+    <value>Rotate left</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RotateLeftToolTip" xml:space="preserve">
+    <value>Rotate left</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="RotateRight" xml:space="preserve">
+    <value>Rotate right</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="RotateRightToolTip" xml:space="preserve">
+    <value>Rotate right</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="SaveAsDefaultButton" xml:space="preserve">
+    <value>Save as default</value>
+    <comment>Used in the options window</comment>
+  </data>
+  <data name="SaveAsDefaultButtonTooltip" xml:space="preserve">
+    <value>Save changes as default settings in the configuration file</value>
+    <comment>Used in the options window</comment>
+  </data>
+  <data name="SelectAFolderOrUseOptions" xml:space="preserve">
+    <value>Select a folder with images by
+pressing F2, or add more folders in the
+"{0}" dialog by pressing F10.</value>
+    <comment>Main window</comment>
+  </data>
+  <data name="TheFileDoesNotExist" xml:space="preserve">
+    <value>The file does not exist:</value>
+    <comment>General warning</comment>
+  </data>
+  <data name="Thumbnails" xml:space="preserve">
+    <value>Thumbnails</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="ThumbnailsRadio" xml:space="preserve">
+    <value>Thumbnails</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="ThumbnailsRadioToolTip" xml:space="preserve">
+    <value>Make the two closer image edges touch the screen box edges.
+Images have rounded corners, are always centered and cannot be aligned with the mouse.</value>
+    <comment>Used in the options window in the Auto-scaling tab</comment>
+  </data>
+  <data name="TipLabel" xml:space="preserve">
+    <value>Tip:</value>
+    <comment>Used in the options window in the Advanced tab</comment>
+  </data>
+  <data name="UpsideDownImage" xml:space="preserve">
+    <value>Upside-down</value>
+    <comment>Used in the sliding message panel</comment>
+  </data>
+  <data name="UpsideDownToolTip" xml:space="preserve">
+    <value>Upside-down</value>
+    <comment>Image ToolTip</comment>
+  </data>
+  <data name="ZoomToolTip" xml:space="preserve">
+    <value>Zoom</value>
+    <comment>Image ToolTip</comment>
+  </data>
+</root>

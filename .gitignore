@@ -1,0 +1,9 @@
+.git/
+.vs/
+src/bin/
+src/obj/
+tests/bin/
+tests/obj/
+post_build.bat
+*.suo
+*.user

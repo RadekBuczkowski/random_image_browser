@@ -1,0 +1,56 @@
+﻿<!-- This file contains basic styles for all controls -->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Common control style for most controls -->
+
+    <Style x:Key="styleControl" TargetType="{x:Type Control}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Effect" Value="{StaticResource shadowSmall}" />
+        <Setter Property="FontSize" Value="{Binding Path=ActualWidth, Converter={StaticResource multiply},
+            ConverterParameter=0.4, RelativeSource={RelativeSource Self}}" />
+    </Style>
+
+    <!-- Style for a gold frame around controls when selected -->
+
+    <Style x:Key="controlSelection" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="Gold" />
+        <Setter Property="StrokeThickness" Value="{Binding Path=ActualHeight, Converter={StaticResource multiply},
+            ConverterParameter=0.045, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="RadiusX" Value="3" />
+        <Setter Property="RadiusY" Value="3" />
+        <Setter Property="Visibility" Value="Hidden" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <!-- Style for pulsating the control when hovering the mouse -->
+
+    
+    <Style x:Key="controlHighlighting" TargetType="{x:Type Rectangle}">
+        <Setter Property="Stroke" Value="Transparent" />
+        <Setter Property="StrokeThickness" Value="{Binding Path=ActualHeight, Converter={StaticResource multiply},
+            ConverterParameter=0.025, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="RadiusX" Value="3" />
+        <Setter Property="RadiusY" Value="3" />
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard Name="CycleBorder">
+                    <Storyboard>
+                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke.Color">
+                            <DiscreteColorKeyFrame Value="#FFFFA500" KeyTime="0:0:0" />
+                        </ColorAnimationUsingKeyFrames>
+                        <ColorAnimation Storyboard.TargetProperty="Stroke.Color" To="#20FFA500" 
+                                            Duration="0:0:0.5" AutoReverse="True" RepeatBehavior="Forever" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <StopStoryboard BeginStoryboardName="CycleBorder" />
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>
