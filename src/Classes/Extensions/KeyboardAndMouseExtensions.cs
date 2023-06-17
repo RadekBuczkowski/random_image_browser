@@ -54,6 +54,7 @@ public static class KeyboardAndMouseExtensions
             [Key.F2.ToString()] = () => browser.ResetBrowser(setImageFolder: true),
             [Key.F3.ToString()] = () => browser.ResetBrowser(toggleGrouping: true),
             [Key.F4.ToString()] = browser.RestartApplication,
+            [Key.F7.ToString()] = App.ShowCommandLine,  // debug command
             [Key.F8.ToString()] = browser.ShowDebugInfo,  // debug command
             [Key.F10.ToString()] = () => OptionsWindow.Show(browser),
             [Key.F11.ToString()] = ResourceHelper.OpenUserConfigFile

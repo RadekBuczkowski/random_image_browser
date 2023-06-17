@@ -556,7 +556,7 @@ public class ImageBrowser
                 LoadImage(image, reason);
             if (reason != Reasons.ChangeOrientation)
                 ShowText(State.GetDefaultDescription(), false);
-            if (Cache.NeedsRestart(State.AutoRestartEveryNImages + State.MaximumImagesLoaded))
+            if (Cache.NeedsRestart(State.AutoRestartEveryNImages, State.MaximumImagesLoaded))
                 RestartApplication();
         }
     }

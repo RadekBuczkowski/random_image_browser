@@ -29,6 +29,14 @@ public partial class App : Application
     private static int _counter = 0;
 
     /// <summary>
+    /// Debugging method.
+    /// </summary>
+    public static void ShowCommandLine()
+    {
+        ExceptionHelper.OpenInNotepad(string.Join(Environment.NewLine + Environment.NewLine, CommandLine), Title);
+    }
+
+    /// <summary>
     /// Saves the command line arguments.
     /// </summary>
     private void Application_Startup(object sender, StartupEventArgs e)

@@ -187,7 +187,7 @@ public class ImageBrowserStateDurable : ImageBrowserState
 
         StringBuilder result = new();
         for (int i = 0; i < 3; i++)
-            if (ImageFolders.Length > i)
+            if (ImageFolders.Length > i && string.IsNullOrWhiteSpace(ImageFolders[i]) == false)
                 result.Append($" -ImageFolder{i + 1} \"{ImageFolders[i]}\"");
         result.Append(" -Layout ").Append(Layout);
         result.Append(" -PreviousLayout ").Append(_previousLayout);
@@ -201,8 +201,10 @@ public class ImageBrowserStateDurable : ImageBrowserState
         result.Append(" -RotationAngle ").Append(Angle);
         result.Append(" -Mirror ").Append(BooleanText(IsMirror));
         result.Append(" -Portrait ").Append(BooleanText(IsPortrait));
-        result.Append($" -SerializedWindowRectangle \"{SerializedWindowRectangle}\"");
-        result.Append($" -SerializedCacheFile \"{SerializedCacheFile}\"");
+        if (string.IsNullOrWhiteSpace(SerializedWindowRectangle) == false)
+            result.Append($" -SerializedWindowRectangle \"{SerializedWindowRectangle}\"");
+        if (string.IsNullOrWhiteSpace(SerializedCacheFile) == false)
+            result.Append($" -SerializedCacheFile \"{SerializedCacheFile}\"");
         result.Append($" -FirstImageIndex {FirstImageIndex}");
         result.Append($" -FirstUnseenImageIndex {_firstUnseenImageIndex}");
         result.Append($" -MaxImagePixelDimension {MaxImagePixelDimension}");

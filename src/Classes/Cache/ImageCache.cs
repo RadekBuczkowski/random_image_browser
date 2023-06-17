@@ -331,10 +331,10 @@ public class ImageCache
     /// and the application needs to restart to prevent the problem of stuttering animations
     /// (threshold equals <see cref="ImageBrowserState.AutoRestartEveryNImages"/>).
     /// </summary>
-    public bool NeedsRestart(int threshold)
+    public bool NeedsRestart(int threshold, int extend_threshold = 0)
     {
         int value = Volatile.Read(ref _cacheReceivedCount);
-        if (threshold <= 0 || value <= 0 || value < threshold)
+        if (threshold <= 0 || value <= 0 || value < threshold + extend_threshold)
             return false;
         Volatile.Write(ref _cacheReceivedCount, -1); // Prevent from restarting more than once per application run.
         return true;

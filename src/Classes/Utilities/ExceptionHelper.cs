@@ -295,7 +295,7 @@ public static partial class ExceptionHelper
         {
             string message = ex.ResolveMessage(header, true) + Environment.NewLine;
             message += GetEnvironmentDetails();
-            OpenNotepad(message, title);
+            OpenInNotepad(message, title);
         }
         catch
         {
@@ -306,7 +306,7 @@ public static partial class ExceptionHelper
     /// <summary>
     /// Opens Windows Notepad.
     /// </summary>
-    private static void OpenNotepad(string message, string title)
+    public static void OpenInNotepad(string message, string title)
     {
         Process notepad = Process.Start(new ProcessStartInfo("notepad.exe"));
         if (notepad != null)
