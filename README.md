@@ -17,7 +17,15 @@ in the operating system, but it is possible change it in the configuration.
 
 The compiled version of the application is available as a ClickOnce installation [at this link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/ClickOnce/Publish.html).
 
-Please note that the installation does not have certificates attached so you have to ignore all warnings about an untrusted provider.
+ClickOnce gives you automatic updates when starting the application. Please note that the ClickOnce installation does not have certificates attached
+(the cost for a certificate is 300$ per year) so you have to ignore all warnings about an untrusted provider.
+
+The compiled version of the application is also available as a tar.gz file and can be downloaded [from this link](https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/publish/RandomImageBrowser.tar.gz).
+
+## Performance
+
+The application uses the graphic card extensively. If you want to improve performance and smoothness, close other application using the graphic card, 
+especially Web browsers. When the application becomes less fluid, you can always press F4 to restart (it keeps the state of the images unchanged) and remedy the problem. There is also an option to automatically restart after viewing a certain number of images.
 
 ### Screen-shots
 
