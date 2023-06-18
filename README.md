@@ -33,7 +33,7 @@ If you don't already have it, you can download it [from here](https://dotnet.mic
 
 This application extensively utilizes the graphics card. To ensure smoothness and improve overall performance, it is recommended to close other applications that use the graphics card, particularly web browsers.
 
-If, for any reason, the application becomes less fluid, you can press F4 to restart it and resolve the issue. The restart process is quick and is barely noticeable to the user. It maintains the entire browser state, window stae, and image order. Additionally, there is an option to enable automatic restart after viewing a certain number of images.
+If, for any reason, the application becomes less fluid, you can press F4 to restart it and resolve the issue. The restart process is quick and is barely noticeable to the user. It maintains the entire browser state, window state, and image order. Additionally, there is an option to enable automatic restart after viewing a certain number of images.
 
 ### Screen-shots
 
