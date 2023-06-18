@@ -2,9 +2,14 @@
 
 ### Description
 
-This is a browser showing images with smooth animations and fluid repeated scrolling like on an iPhone. It shows several images on one page, and you can zoom in each image with a mouse click.
+This is a browser showing images with smooth animations and fluid repeated scrolling like on an iPhone.
+It shows several images on one page, and you can zoom in each image with a mouse click.
 
-All image transitions like zooming, navigation, rotations, changing image arrangements, etc. **are animated**. The browser can group images and shulffle the groups (default) or can show all images in random order. The program is rich in options and configurations and is very easy to use. 
+All image transitions like zooming, navigation, rotations, changing image arrangements, etc. **are animated**.
+Working with images that simply move and scale from where they were gives a very satisfying experience.
+
+The browser can group images and shulffle the groups (default) or can show all images in random order.
+The program is rich in options and configurations and is very easy to use. 
 
 The following image types are by default enabled in the options:
 **jpg, jpeg, gif, png, webp, avif**.
