@@ -51,9 +51,14 @@ public class ImageBrowserCanvas : Canvas
     }
 
     /// <summary>
-    /// Returns all images on canvas including invisible images.
+    /// Returns all images on canvas including expired images.
     /// </summary>
-    public IEnumerable<Image> Images => Children.OfType<Image>().Where(image => image.Tag() != null);
+    public IEnumerable<Image> AllImages => Children.OfType<Image>().Where(image => image.Tag() != null);
+
+    /// <summary>
+    /// Returns only active images on canvas, both visible and invisible.
+    /// </summary>
+    public IEnumerable<Image> Images => AllImages.Where(image => image.Tag().Index > int.MinValue);
 
     /// <summary>
     /// Returns <see langword="true"/> if the canvas has been refreshed recently and a new refresh request
@@ -93,6 +98,17 @@ public class ImageBrowserCanvas : Canvas
     {
         foreach (Image image in Images)
             image.SetZIndex((image.Tag().Index == index) ? int.MaxValue : image.Tag().Index);
+    }
+
+    /// <summary>
+    /// If an image was returned after reloading and is expired, find the matching existing image.
+    /// Otherwise return the same image. <see langword="null"/> is returned if the image does not exist anymore.
+    /// </summary>
+    public Image MatchExpiredImage(Image imageToFind)
+    {
+        if (Images.Contains(imageToFind))
+            return imageToFind;
+        return Images.FirstOrDefault(image => image.Tag().FilePath == imageToFind.Tag().FilePath);
     }
 
     /// <summary>

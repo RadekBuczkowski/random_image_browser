@@ -445,10 +445,10 @@ public class ImageBrowser
     /// </summary>
     private void RemoveExpiredImages()
     {
-        int count = ImageCanvas.Images.Count() - State.MaximumImagesLoaded;
+        int count = ImageCanvas.AllImages.Count() - State.MaximumImagesLoaded;
         if (count >= State.CanvasColumns)
         {
-            List<Image> recycled = ImageCanvas.Images
+            List<Image> recycled = ImageCanvas.AllImages
                 .Where(image => State.IsImageExpired(image.Tag().Index)).Take(count).ToList();
             foreach (Image image in recycled)
                 ImageCanvas.Children.Remove(image.RecycleImage());
@@ -468,7 +468,7 @@ public class ImageBrowser
                 // If the image becomes visible in the meantime, refresh it.
                 Image image = GetVisibleImages().FirstOrDefault(image => image.Tag().FilePath == filePath);
                 if (image != null)
-                    ReceiveImage(result, image, image.Tag(), Reasons.None);
+                    ReceiveImage(result, image, Reasons.None);
             }
             Cache.LoadImage(filePath, Receive);
         }
@@ -578,7 +578,7 @@ public class ImageBrowser
         }
         if (tag.IsLoaded == false && tag.LoadingException == null)
         {
-            void Receive(ImageCacheBitmap result) => ReceiveImage(result, image, tag, reason, neighbor);
+            void Receive(ImageCacheBitmap result) => ReceiveImage(result, image, reason, neighbor);
             bool found = Cache.LoadImage(tag.FilePath, Receive);
             // If the image wasn't in cache, show the loading icon. The proper image will be received asynchronously.
             if (!found && !State.IsZoomed && image.Source == null && reason != Reasons.Restart && neighbor == 0)
@@ -592,15 +592,16 @@ public class ImageBrowser
     /// Called when the UI thread retrieved the bitmap from the cache (synchronous callback)
     /// or when another thread loaded the bitmap from disk storage (asynchronous callback).
     /// </summary>
-    private void ReceiveImage(ImageCacheBitmap result, Image image, ImageTag tag, Reasons reason, int neighbor = 0)
+    private void ReceiveImage(ImageCacheBitmap result, Image image, Reasons reason, int neighbor = 0)
     {
-        if (tag == image.Tag() && tag.IsLoaded == false &&
+        image = ImageCanvas.MatchExpiredImage(image);
+        if (image != null && image.Tag().IsLoaded == false &&
             (result.IsAsynchronous == false || GetVisibleImages().Contains(image) || IsAnimating == false))
         {
             Cache.AcknowledgeReceived();
             image.AssignBitmap(result);
             RefreshImage(image, reason);
-            if (tag.IsLoaded && neighbor != 0 && State.IsImageVisible(tag.Index))
+            if (image.Tag().IsLoaded && neighbor != 0 && State.IsImageVisible(image.Tag().Index))
                 image.ShowTooltip();
         }
     }
@@ -714,5 +715,5 @@ public class ImageBrowser
     /// Debugging method showing animation clocks.
     /// </summary>
     public void ShowDebugInfo() =>
-        ShowText($"{Text.ImagesLabel} {ImageCanvas.Images.Count()}\r\n" + AnimationExtensionMethods.GetClockInfo());
+        ShowText($"{Text.ImagesLabel} {ImageCanvas.AllImages.Count()}\r\n" + AnimationExtensionMethods.GetClockInfo());
 }

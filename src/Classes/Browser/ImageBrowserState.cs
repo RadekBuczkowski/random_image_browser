@@ -453,6 +453,8 @@ public class ImageBrowserState
     /// </summary>
     public bool IsImageVisible(int index, int extraRows = 0)
     {
+        if (IsImageExpired(index))
+            return false;
         return index >= FirstImageIndex + CanvasColumns * ((extraRows < 0) ? extraRows : 0)
             && index < FirstImageIndex + ImagesOnCanvas + CanvasColumns * ((extraRows > 0) ? extraRows : 0);
     }
