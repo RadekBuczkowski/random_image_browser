@@ -204,14 +204,19 @@ public class ImageBrowserState
     /// <summary>
     /// Image folders as specified in the app.config file in "ImageFolder1", "ImageFolder2" and "ImageFolder3".
     /// </summary>
-    public string[] ImageFolders { get; private set; } = new string[]
-        { Settings.Default.ImageFolder1, Settings.Default.ImageFolder2, Settings.Default.ImageFolder3 };
+    public string[] ImageFolders { get; private set; } = DefaultImageFolders;
 
     /// <summary>
     /// Supported image file extensions as specified in the app.config file in "ImageExtensions".
     /// </summary>
     public string[] ImageExtensions { get; private set; } =
         Settings.Default.ImageExtensions.Replace(" ", string.Empty).ToLower().Split(new char[] { ',', ';' });
+
+    /// <summary>
+    /// Default values for image folders as specified in the app.config file in "Folder1", "Folder2", and "Folder3".
+    /// </summary>
+    public static string[] DefaultImageFolders => new string[]
+        { Settings.Default.ImageFolder1, Settings.Default.ImageFolder2, Settings.Default.ImageFolder3 };
 
     /// <summary>
     /// Default value for Layout as specified in the app.config file in "Layout".

@@ -38,6 +38,16 @@ public static class BasicExtensionMethods
     }
 
     /// <summary>
+    /// Returns only not null and not whitespace string from this string collection.
+    /// </summary>
+    #nullable enable
+    public static IEnumerable<string?> GetNonEmpty(this IEnumerable<string?> items)
+    {
+        return items.Where(item => string.IsNullOrWhiteSpace(item) == false);
+    }
+    #nullable disable
+
+    /// <summary>
     /// Extracts an array of strings from a comma or semicolon separated text.
     /// </summary>
     public static string[] ExtractItems(this string text)
@@ -68,8 +78,7 @@ public static class BasicExtensionMethods
     /// </summary>
     public static bool AreNonEmptyItemsEqual(this IEnumerable<string> items1, IEnumerable<string> items2)
     {
-        return items1.Where(item => string.IsNullOrWhiteSpace(item) == false)
-            .SequenceEqual(items2.Where(item => string.IsNullOrWhiteSpace(item) == false));
+        return items1.GetNonEmpty().SequenceEqual(items2.GetNonEmpty());
     }
 
     /// <summary>

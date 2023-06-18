@@ -53,7 +53,8 @@ public partial class ImageBrowserSetOptions : BindingClass
         Folder3 = GetFolder(3);
         FileExtensions = _browser.State.ImageExtensions.CombineItems();
         AvailableFolders = string.Empty.Yield()
-                                 .Concat(Folders.Where(item => string.IsNullOrWhiteSpace(item) == false))
+                                 .Concat(Folders.GetNonEmpty())
+                                 .Concat(ImageBrowserState.DefaultImageFolders.GetNonEmpty().Except(Folders))
                                  .Concat(AvailableFolders).ToArray();
     }
 

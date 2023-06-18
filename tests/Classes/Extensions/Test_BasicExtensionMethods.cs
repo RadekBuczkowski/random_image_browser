@@ -67,6 +67,20 @@ public partial class Test_BasicExtensionMethods
     }
 
     [Fact]
+    public void Test_GetNonEmpty()
+    {
+        // arrange
+        string?[] items = new string?[] { "1", null, "  ", "3", "", "12", "", null };
+        string?[] expected_result = new string?[] { "1", "3", "12" };
+
+        // act
+        string?[] actual_result = items.GetNonEmpty().ToArray();
+
+        // assert
+        Assert.Equal(actual_result, expected_result);
+    }
+
+    [Fact]
     public void Test_ExtractItems()
     {
         // arrange

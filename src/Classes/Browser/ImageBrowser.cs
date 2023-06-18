@@ -598,7 +598,8 @@ public class ImageBrowser
         if (image != null && image.Tag().IsLoaded == false &&
             (result.IsAsynchronous == false || GetVisibleImages().Contains(image) || IsAnimating == false))
         {
-            Cache.AcknowledgeReceived();
+            if (neighbor == 0)
+                Cache.AcknowledgeReceived();
             image.AssignBitmap(result);
             RefreshImage(image, reason);
             if (image.Tag().IsLoaded && neighbor != 0 && State.IsImageVisible(image.Tag().Index))

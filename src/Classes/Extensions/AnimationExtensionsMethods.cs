@@ -136,7 +136,7 @@ public static class AnimationExtensionMethods
     }
 
     /// <summary>
-    /// Return all animatable objects in the application having animations attached.
+    /// Returns all animatable objects in the application having animations attached.
     /// </summary>
     private static IEnumerable<Animatable> GetAnimatableElements()
     {
@@ -144,7 +144,7 @@ public static class AnimationExtensionMethods
     }
 
     /// <summary>
-    /// Return all animatable objects applied to this UI <paramref name="element"/>.
+    /// Returns all animatable objects applied to this UI <paramref name="element"/>.
     /// </summary>
     private static IEnumerable<Animatable> GetAnimatableElements(this UIElement element)
     {
@@ -157,7 +157,7 @@ public static class AnimationExtensionMethods
     }
 
     /// <summary>
-    /// Return all transformations applied to this UI <paramref name="element"/>.
+    /// Returns all transformations applied to this UI <paramref name="element"/>.
     /// </summary>
     private static IEnumerable<Transform> GetTransformations(this UIElement element)
     {
