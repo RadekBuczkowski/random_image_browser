@@ -32,7 +32,7 @@ When the application becomes for some reason less fluid, you can always press F4
 
 ### Screen-shots
 
-Below are three screen-shots showing a few of the configuratons.
+Below are three screen-shots showing a few of the available image layouts.
 
 ![Icon](demo/demo1.jpg?raw=true)
 
