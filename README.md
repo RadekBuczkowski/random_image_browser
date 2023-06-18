@@ -20,7 +20,7 @@ The compiled version of the application is available as a ClickOnce installation
 ClickOnce gives you automatic updates when starting the application. Please note that the ClickOnce installation does not have certificates attached
 (the cost for a certificate is 300$ per year) so you have to ignore all warnings about an untrusted provider.
 
-The compiled version of the application is also available as a tar.gz file and can be downloaded [from this link](https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/publish/RandomImageBrowser.tar.gz).
+The compiled version of the application is also available as a tar.gz file and can be downloaded [from this link](https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/publish/RandomImageBrowser.tar.gz). Simply copy the content to a folder, no installation needed.
 
 ## Performance
 
