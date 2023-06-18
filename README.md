@@ -2,42 +2,42 @@
 
 ### Description
 
-This is a browser showing images with smooth animations and fluid repeated scrolling like on an iPhone.
-It shows several images on one page, and you can zoom in each image with a mouse click.
+This is an image viewer implementing smooth animations and fluid repeated scrolling, similar to the browsing experience on an iPhone.
+The program allows users to view multiple images on a single page and provides the ability to zoom in on each image with a mouse click.
 
-All image transitions like zooming, navigation, rotations, changing image arrangements, etc. **are animated**.
-Working with images that simply move and scale smoothly from where they were to the destination gives a very satisfying experience.
+All image transitions, including zooming, navigation, rotations, and changing image arrangements, **are accompanied by animations**.
+This creates a highly satisfying user experience as images seamlessly move and scale from their original positions to the desired destination.
 
-The browser can group images and shulffle the groups (default) or can show all images in random order.
-The program is rich in options and configurations and is very easy to use. 
+The browser groups images with similar names and shuffles the groups by default. Alternatively, it can display all images in a random order.
+The program provides various configuration options and is designed to be easy-to-use and user-friendly.
 
-The following image types are by default enabled in the options:
-**jpg, jpeg, gif, png, webp, avif**.
-But after starting the application you can easily enable other less common image extensions in the program Options.
+By default, the browser supports the following image types: **jpg, jpeg, gif (including animated gifs), png, webp, avif**. However, users
+can easily enable less common image extensions in the program's Options after launching the application.
 
-The browser is currently available in 3 languages (**English, Danish and German**). The default language is specified
-in the operating system, but it is possible to change it in the configuration.
-A detailed help in each language is available in the application when pressing F1.
+Currently, the browser is available in three languages: **English, Danish, and German**. The default language is determined
+by the operating system, but users can change it in the configuration settings. Detailed help window in each language can be accessed
+by pressing F1 within the application.
 
 ### Compiled version
 
-The compiled version of the application is available as a ClickOnce installation [at this link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/ClickOnce/Publish.html).
+The compiled version of the application is available for installation using ClickOnce. You can access it
+[at this link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/ClickOnce/Publish.html).
 
-ClickOnce gives you automatic updates when starting the application. Please note that the ClickOnce installation does not have certificates attached
-(signing the application with such a certificate costs 300$ per year, so it is a bit pointless). If you want to use ClickOnce, simply ignore all warnings about an untrusted provider.
+ClickOnce provides automatic updates when launching the application. Please note that the ClickOnce installation does not include attached certificates. While signing the application with a certificate is a costly endeavor (at $300 per year), it is not essential. If you choose to use ClickOnce, you need to disregard any warnings about an untrusted provider.
 
-The compiled version of the application is also available as a tar.gz file and can be downloaded [from this link](https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/publish/RandomImageBrowser.tar.gz). Copy the content to a folder, no installation needed.
+Alternatively, you can download the compiled version of the application as a tar.gz file [from this link](https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/publish/RandomImageBrowser.tar.gz).
+Copy the content of the archive file to a folder. No installation is needed. Unlike ClickOnce, the archive file does not include the .NET Core 7 runtime.
+If you don't already have it, you can download it [from here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-7.0.4-windows-x64-installer).
 
-## Performance
+### Performance
 
-The application uses the graphics card extensively. If you want to improve performance and smoothness, close other applications using the graphics card, 
-especially Web browsers.
+This application extensively utilizes the graphics card. To ensure smoothness and improve overall performance, it is recommended to close other applications that use the graphics card, particularly web browsers.
 
-When the application becomes for some reason less fluid, you can always press F4 to restart and remedy the problem. It is fast and keeps the state and order of images unchanged. There is also an option to automatically restart after viewing a certain number of images.
+If, for any reason, the application becomes less fluid, you can press F4 to restart it and resolve the issue. The restart process is quick and is barely noticeable to the user. It maintains the entire browser state, window stae, and image order. Additionally, there is an option to enable automatic restart after viewing a certain number of images.
 
 ### Screen-shots
 
-Below are three screen-shots showing a few of the available image arrangements.
+Below are three screenshots showcasing a selection of available image arrangements.
 
 ![Icon](demo/demo1.jpg?raw=true)
 
