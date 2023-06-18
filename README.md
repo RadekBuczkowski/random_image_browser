@@ -19,7 +19,7 @@ A detailed help in each language is available in the application when pressing F
 The compiled version of the application is available as a ClickOnce installation [at this link](https://htmlpreview.github.io/?https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/ClickOnce/Publish.html).
 
 ClickOnce gives you automatic updates when starting the application. Please note that the ClickOnce installation does not have certificates attached
-(the cost of a certificate is 300$ per year). If you want to use it, simply ignore all warnings about an untrusted provider.
+(signing the application with such a certificate costs 300$ per year, so it is a bit pointless). If you want to use ClickOnce, simply ignore all warnings about an untrusted provider.
 
 The compiled version of the application is also available as a tar.gz file and can be downloaded [from this link](https://raw.githubusercontent.com/RadekBuczkowski/random_image_browser/main/publish/RandomImageBrowser.tar.gz). Copy the content to a folder, no installation needed.
 
@@ -28,7 +28,7 @@ The compiled version of the application is also available as a tar.gz file and c
 The application uses the graphic card extensively. If you want to improve performance and smoothness, close other applications using the graphics card, 
 especially Web browsers.
 
-When the application becomes for some reason less fluid, you can always press F4 to restart and remedy the problem. It is fast and keeps the state and order of the images unchanged. There is also an option to automatically restart after viewing a certain number of images.
+When the application becomes for some reason less fluid, you can always press F4 to restart and remedy the problem. It is fast and keeps the state and order of images unchanged. There is also an option to automatically restart after viewing a certain number of images.
 
 ### Screen-shots
 
