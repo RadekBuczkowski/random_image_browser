@@ -25,7 +25,9 @@ The compiled version of the application is also available as a tar.gz file and c
 ## Performance
 
 The application uses the graphic card extensively. If you want to improve performance and smoothness, close other application using the graphic card, 
-especially Web browsers. When the application becomes less fluid, you can always press F4 to restart (it keeps the state of the images unchanged) and remedy the problem. There is also an option to automatically restart after viewing a certain number of images.
+especially Web browsers.
+
+When the application for some reason becomes less fluid, you can always press F4 to restart (it keeps the state of the images unchanged) and remedy the problem. There is also an option to automatically restart after viewing a certain number of images.
 
 ### Screen-shots
 
