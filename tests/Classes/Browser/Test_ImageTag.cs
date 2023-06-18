@@ -4,6 +4,7 @@ using System.Windows;
 
 using Random_Image.Classes.Browser;
 using Random_Image.Classes.Cache;
+using Random_Image.Classes.Extensions;
 
 public class Test_ImageTag
 {
@@ -402,6 +403,25 @@ public class Test_ImageTag
 
         // assert
         Assert.True(actual_result.RoughlyEquals(new Vector(0, 804)));  // read with a debugger
+    }
+
+    [Fact]
+    public void Test_GetNavigationDelta()
+    {
+        // arrange
+        ImageTag sut = new();
+        ImageCacheBitmap cache = new(TestHelper.MockBitmap(100, 50));
+        sut.SetBitmapSize(cache);
+        Size canvasSize = new(1000, 800);
+        int expected_result = (5 * 5 + 3).MakeEvenlyDivisible(5);  // six pages down
+
+        // act
+        sut.Resize(State, canvasSize, new(0, 0), new(0, 0), Reasons.Navigate);
+        Vector shift = sut.GetNavigationShift(State, expected_result);
+        int actual_result = ImageTag.GetNavigationDelta(State, canvasSize, shift);
+
+        // assert
+        Assert.Equal(expected_result, actual_result);
     }
 
     [Fact]

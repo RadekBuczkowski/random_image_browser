@@ -243,21 +243,21 @@
                     <ComboBox Style="{StaticResource styleCombo}" Grid.Row="1" Grid.Column="2"
                               ToolTip="{x:Static r:Text.RestartEveryNImagesTooltip}"
                               SelectedValue="{Binding RestartEveryNImages,
-                                Converter={StaticResource integerSettingConverter}, ConverterParameter=Disabled}"
+                                Converter={StaticResource integerSettingConverter}, ConverterParameter=DisabledOption}"
                               ItemsSource="{Binding ValuesOfRestartEveryNImages}" />
                     <Label Content="{x:Static r:Text.MaxPixelResolutionLabel}" Grid.Row="2" Grid.Column="1"
                               VerticalAlignment="Top" />
                     <ComboBox Style="{StaticResource styleCombo}" Grid.Row="2" Grid.Column="2"
                               ToolTip="{x:Static r:Text.MaxPixelResolutionToolTip}"
                               SelectedValue="{Binding MaxPixelDimension,
-                                Converter={StaticResource integerSettingConverter}, ConverterParameter=Disabled}"
+                                Converter={StaticResource integerSettingConverter}, ConverterParameter=DisabledOption}"
                               ItemsSource="{Binding ValuesOfMaxPixelDimension}" />
                     <Label Content="{x:Static r:Text.DesiredFrameRateLabel}" Grid.Row="3" Grid.Column="1"
                            VerticalAlignment="Top" />
                     <ComboBox Style="{StaticResource styleCombo}" Grid.Row="3" Grid.Column="2"
                               ToolTip="{x:Static r:Text.DesiredFrameRateToolTip}"
                               SelectedValue="{Binding DesiredFrameRate,
-                                Converter={StaticResource integerSettingConverter}, ConverterParameter=Disabled}"
+                                Converter={StaticResource integerSettingConverter}, ConverterParameter=DisabledOption}"
                               ItemsSource="{Binding ValuesOfDesiredFrameRate}" />
 
                     <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" >

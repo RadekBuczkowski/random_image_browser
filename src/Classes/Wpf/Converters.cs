@@ -9,6 +9,9 @@ using System.Windows.Markup;
 using System.Windows.Media;
 
 using Random_Image.Classes.Browser;
+using Random_Image.Classes.Extensions;
+using Random_Image.Properties;
+using Random_Image.Resources;
 
 /// <summary>
 /// This file provides conversion classes that are used exclusively from XAML.
@@ -144,12 +147,14 @@ public class IntegerSettingConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return ((value as int?) == 0) ? parameter : value?.ToString();
+        string text = typeof(Text).GetStaticPropertyValue<string>(parameter as string);
+        return ((value as int?) == 0) ? text : value?.ToString();
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return (value == parameter) ? 0 : int.TryParse(value?.ToString().Trim(), out int result) ? result : 0;
+        object text = typeof(Text).GetStaticPropertyValue<string>(parameter as string);
+        return (value == text) ? 0 : int.TryParse(value?.ToString().Trim(), out int result) ? result : 0;
     }
 }
 

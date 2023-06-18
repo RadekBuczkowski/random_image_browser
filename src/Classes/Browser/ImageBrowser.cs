@@ -466,8 +466,8 @@ public class ImageBrowser
             void Receive(ImageCacheBitmap result)
             {
                 // If the image becomes visible in the meantime, refresh it.
-                Image image = GetVisibleImages().FirstOrDefault(image => image.Tag().FilePath == filePath);
-                if (image != null)
+                Image image = ImageCanvas.Images.FirstOrDefault(image => image.Tag().FilePath == filePath);
+                if (image != null && IsImageVisible(image))
                     ReceiveImage(result, image, Reasons.None);
             }
             Cache.LoadImage(filePath, Receive);
@@ -544,7 +544,7 @@ public class ImageBrowser
         {
             ShowText(Text.NoImagesFound);
         }
-        else if (IsReady && ImageCanvas.SyncNeeded(() => LoadImages(delta, reason)) == false)
+        else if (IsReady && State.HasEffect(delta) && ImageCanvas.SyncNeeded(() => LoadImages(delta, reason)) == false)
         {
             ImageCanvas.HideTooltip();
             delta = State.Navigate(delta);
@@ -581,8 +581,13 @@ public class ImageBrowser
             void Receive(ImageCacheBitmap result) => ReceiveImage(result, image, reason, neighbor);
             bool found = Cache.LoadImage(tag.FilePath, Receive);
             // If the image wasn't in cache, show the loading icon. The proper image will be received asynchronously.
-            if (!found && !State.IsZoomed && image.Source == null && reason != Reasons.Restart && neighbor == 0)
-                Receive(ImageCacheBitmap.GetLoadingIcon(isAsynchronous: true));
+            if (found == false)
+            {
+                if (image.Source == null && State.IsZoomed == false && reason != Reasons.Restart && neighbor == 0)
+                    Receive(ImageCacheBitmap.GetLoadingIcon(isAsynchronous: false));
+                else
+                    RefreshImage(image, reason);
+            }
         }
         else
             RefreshImage(image, reason);
@@ -596,7 +601,7 @@ public class ImageBrowser
     {
         image = ImageCanvas.MatchExpiredImage(image);
         if (image != null && image.Tag().IsLoaded == false &&
-            (result.IsAsynchronous == false || GetVisibleImages().Contains(image) || IsAnimating == false))
+            (result.IsAsynchronous == false || IsImageVisible(image) || IsAnimating == false))
         {
             if (neighbor == 0)
                 Cache.AcknowledgeReceived();
@@ -638,6 +643,11 @@ public class ImageBrowser
     /// Returns the remaining offset of an unfinished animated image alignment, so that the image can stay unchanged.
     /// </summary>
     protected virtual Vector GetRemainingAlignmentOffset(Image image) => new(0, 0);
+
+    /// <summary>
+    /// Returns <see langword="true"/> if the image is visible, also when the navigation is in progress.
+    /// </summary>
+    protected virtual bool IsImageVisible(Image image) => GetVisibleImages().Contains(image);
 
     /// <summary>
     /// Shows or hides the specified image according to the latest changes in the canvas state.

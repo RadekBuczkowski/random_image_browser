@@ -53,7 +53,7 @@ public class ImageBrowserCanvas : Canvas
     /// <summary>
     /// Returns all images on canvas including expired images.
     /// </summary>
-    public IEnumerable<Image> AllImages => Children.OfType<Image>().Where(image => image.Tag() != null);
+    public IEnumerable<Image> AllImages => Children.OfType<Image>().ToList().Where(image => image.Tag is ImageTag);
 
     /// <summary>
     /// Returns only active images on canvas, both visible and invisible.
@@ -106,9 +106,12 @@ public class ImageBrowserCanvas : Canvas
     /// </summary>
     public Image MatchExpiredImage(Image imageToFind)
     {
+        string filePath = imageToFind.Tag()?.FilePath;
+        if (filePath == null)
+            return null;
         if (Images.Contains(imageToFind))
             return imageToFind;
-        return Images.FirstOrDefault(image => image.Tag().FilePath == imageToFind.Tag().FilePath);
+        return Images.FirstOrDefault(image => image.Tag()?.FilePath == filePath);
     }
 
     /// <summary>

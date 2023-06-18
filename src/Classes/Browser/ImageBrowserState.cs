@@ -553,6 +553,16 @@ public class ImageBrowserState
     }
 
     /// <summary>
+    /// Returns <see langword="true"/> if the specified navigation <paramref name="delta"/> has an effect,
+    /// i.e. it is not exceeding the boundaries. If delta is zero, it is accepted because zero is a special case 
+    /// used to reload images.
+    /// </summary>
+    public bool HasEffect(int delta)
+    {
+        return delta == 0 || delta.Limit(DeltaHome, DeltaHome + MaximumFirstImageIndex) != 0;
+    }
+
+    /// <summary>
     /// Zooms in an image when clicked (<see cref="Reasons.GoIn"/>).
     /// </summary>
     public void GoIn(int index)

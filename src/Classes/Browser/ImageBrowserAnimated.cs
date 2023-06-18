@@ -202,6 +202,16 @@ public class ImageBrowserAnimated : ImageBrowser
     }
 
     /// <summary>
+    /// Returns <see langword="true"/> if the image is visible, also when the navigation is in progress.
+    /// </summary>
+    protected override bool IsImageVisible(Image image)
+    {
+        int delta = ImageTag.GetNavigationDelta(State, ImageCanvas.GetSize(), ImageCanvas.GetRemainingShift());
+        int extraRows = delta.MakeEvenlyDivisible(State.CanvasColumns) / State.CanvasColumns - Math.Sign(delta);
+        return GetVisibleImages(extraRows).Contains(image);
+    }
+
+    /// <summary>
     /// Crops the image to fit to the canvas slot and adds rounded corners if needed.
     /// </summary>
     protected override void CropImage(Image image, Reasons reason)
@@ -484,7 +494,7 @@ public class ImageBrowserAnimated : ImageBrowser
             transform.AddAnimation(TranslateTransform.XProperty, 0, duration, 0, easing);
             transform.AddAnimation(TranslateTransform.YProperty, 0, duration, 0, easing);
             _navigationDuration = duration;
-            _navigationDelta = 0;  // Only one image starts the navigation animation for the entire canvas.
+            _navigationDelta = 0;  // Make sure only one image starts the navigation animation.
             ImageCanvas.ResetCache(State.IsZoomed == false && tag.Previous.Reason == Reasons.Navigate);
             ImageCanvas.ResetTransformations(transform);  // Resume animations.
         }

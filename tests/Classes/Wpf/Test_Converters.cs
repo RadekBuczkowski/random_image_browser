@@ -131,12 +131,13 @@ public class Test_Converters
     public void Test_IntegerSettingConverter_Convert()
     {
         // arrange
+        string property = "DisabledOption";
         string expected_result = "Disabled";
         int value = 0;
 
         // act
         IntegerSettingConverter sut = new();
-        string actual_result = (string)sut.Convert(value, typeof(int), expected_result, CultureInfo.InvariantCulture);
+        string actual_result = (string)sut.Convert(value, typeof(int), property, CultureInfo.InvariantCulture);
 
         // assert
         Assert.Equal(expected_result, actual_result);
@@ -147,11 +148,12 @@ public class Test_Converters
     {
         // arrange
         int expected_result = 0;
+        string property = "DisabledOption";
         string value = "Disabled";
 
         // act
         IntegerSettingConverter sut = new();
-        int actual_result = (int)sut.ConvertBack(value, typeof(int), value, CultureInfo.InvariantCulture);
+        int actual_result = (int)sut.ConvertBack(value, typeof(int), property, CultureInfo.InvariantCulture);
 
         // assert
         Assert.Equal(expected_result, actual_result);

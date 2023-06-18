@@ -512,6 +512,18 @@ public class ImageTag : ImageCacheTag
     }
 
     /// <summary>
+    /// Returns the navigation delta (number of images scrolled) corresponding to the given remaining
+    /// navigation shift. It is the opposite operation to <see cref="GetNavigationShift"/>.
+    /// Used to identify what images are visible during very fast scrolling animations.
+    /// </summary>
+    public static int GetNavigationDelta(ImageBrowserState state, Size canvasSize, Vector remainingShift)
+    {
+        Rect canvasRectangle = GetCanvasRectangleValue(state, canvasSize, 0, state.SlotMargin, Reasons.None);
+        return (int)(remainingShift.X / (canvasRectangle.Width + state.SlotMargin) +
+                    remainingShift.Y * state.CanvasColumns / (canvasRectangle.Height + state.SlotMargin));
+    }
+
+    /// <summary>
     /// Returns a multi-line tooltip-text describing the image.
     /// </summary>
     public string GetImageDescription()

@@ -31,6 +31,7 @@ public partial class Test_ObjectExtensionMethods
 
         // assert
         Assert.Equal(actual_result, expected_result);
+
     }
 
     [Fact]
@@ -43,6 +44,21 @@ public partial class Test_ObjectExtensionMethods
         // act
         test.SetPropertyValue("Value", expected_result);
         int actual_result = test.Value;
+
+        // assert
+        Assert.Equal(actual_result, expected_result);
+    }
+
+    private class TestClass { public static int Value { get; set; } = 23; }
+
+    [Fact]
+    public void Test_GetStaticPropertyValue()
+    {
+        // arrange
+        int expected_result = TestClass.Value;
+
+        // act
+        int actual_result = typeof(TestClass).GetStaticPropertyValue<int>("Value");
 
         // assert
         Assert.Equal(actual_result, expected_result);

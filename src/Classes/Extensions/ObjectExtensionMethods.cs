@@ -1,5 +1,6 @@
 ﻿namespace Random_Image.Classes.Extensions;
 
+using System;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Media;
@@ -17,6 +18,14 @@ public static class ObjectExtensionMethods
     public static T GetPropertyValue<T>(this object obj, string propertyName)
     {
         return (T)obj.GetType().GetProperty(propertyName).GetValue(obj);
+    }
+
+    /// <summary>
+    /// Returns property value by property name from a static property in this type.
+    /// </summary>
+    public static T GetStaticPropertyValue<T>(this Type type, string propertyName)
+    {
+        return (T)type.GetProperty(propertyName, BindingFlags.Static | BindingFlags.Public).GetValue(null);
     }
 
     /// <summary>
