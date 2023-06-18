@@ -25,14 +25,14 @@ The compiled version of the application is also available as a tar.gz file and c
 
 ## Performance
 
-The application uses the graphic card extensively. If you want to improve performance and smoothness, close other applications using the graphics card, 
+The application uses the graphics card extensively. If you want to improve performance and smoothness, close other applications using the graphics card, 
 especially Web browsers.
 
 When the application becomes for some reason less fluid, you can always press F4 to restart and remedy the problem. It is fast and keeps the state and order of images unchanged. There is also an option to automatically restart after viewing a certain number of images.
 
 ### Screen-shots
 
-Below are three screen-shots showing a few of the available image layouts.
+Below are three screen-shots showing a few of the available image arrangements.
 
 ![Icon](demo/demo1.jpg?raw=true)
 
