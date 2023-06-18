@@ -6,7 +6,7 @@ This is a browser showing images with smooth animations and fluid repeated scrol
 It shows several images on one page, and you can zoom in each image with a mouse click.
 
 All image transitions like zooming, navigation, rotations, changing image arrangements, etc. **are animated**.
-Working with images that simply move and scale from where they were gives a very satisfying experience.
+Working with images that simply move and scale smoothly from where they were to the destination gives a very satisfying experience.
 
 The browser can group images and shulffle the groups (default) or can show all images in random order.
 The program is rich in options and configurations and is very easy to use. 
